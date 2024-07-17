@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, redirect, url_for, flash, session
+from flask import Flask, request, render_template, redirect, url_for, flash, session, jsonify
 import datetime
 import psycopg2
 
@@ -106,6 +106,6 @@ def consultarTodasPublicaciones():
         flash(f"Error al consultar publicaciones: {e}")
         return None
 
-if __name__ as "__main__":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=True)
